@@ -1,0 +1,348 @@
+/* Paleta de Colores Pastel Oscuros */
+:root {
+    --bg-light: #D7E1EC; /* Fondo principal */
+    --header-footer-bg: #6B7B8E; /* Encabezado y Pie de página */
+    --text-dark: #36454F; /* Texto principal */
+    --accent-success: #8B9A8A; /* Éxito, botones primarios */
+    --accent-border: #A3B1C2; /* Bordes, separadores */
+    --panel-bg: #EAEFF4; /* Fondo de paneles */
+    --input-border: #BBC7D4; /* Bordes de input */
+    --button-primary-bg: #5E6E85; /* Botones primarios */
+    --button-primary-hover: #4B5B70;
+    --button-secondary-bg: #A3B1C2; /* Botones secundarios (cancelar) */
+    --button-secondary-hover: #8E9CAE;
+    --button-edit: #E0BBE4; /* Botón editar (lavanda) */
+    --button-edit-hover: #C5A0C9;
+    --button-delete: #C96B7B; /* Botón eliminar (rosa rojizo) */
+    --button-delete-hover: #B35A6A;
+    --card-bg: #FFFFFF; /* Fondo de tarjetas de items */
+    --card-border-left: #8B9A8A; /* Borde izquierdo de tarjeta de item (como accent-success) */
+    --report-bg: #F4F7F6; /* Fondo del área de reporte */
+    --table-header-bg: #DCE5ED; /* Fondo de tabla de reporte */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--header-footer-bg);
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 2.2em;
+}
+
+/* Main Navigation */
+nav.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav.main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+nav.main-nav ul li a:hover {
+    background-color: var(--button-primary-hover);
+    transform: translateY(-2px);
+}
+
+main.container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px;
+    max-width: 1200px;
+    margin: 25px auto;
+    flex-grow: 1;
+}
+
+/* Section Styling */
+.card-section {
+    background-color: var(--panel-bg);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: var(--button-primary-bg);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--accent-border);
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: var(--text-dark);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Panel Grid for Creation Forms */
+.panel-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+@media (min-width: 768px) {
+    .panel-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.panel {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f8fbfd; /* Ligeramente más claro que el fondo */
+    color: var(--text-dark);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--accent-success);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 154, 138, 0.2); /* Color de acento con transparencia */
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-right: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button.primary-btn, button[type="submit"] {
+    background-color: var(--button-primary-bg);
+    color: #fff;
+}
+
+button.primary-btn:hover, button[type="submit"]:hover {
+    background-color: var(--button-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+button.secondary-btn {
+    background-color: var(--button-secondary-bg);
+    color: #fff;
+}
+
+button.secondary-btn:hover {
+    background-color: var(--button-secondary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Sprint & Story Cards */
+.sprint-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.sprint-card h3 {
+    color: var(--button-primary-bg);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    text-align: left; /* Alineado a la izquierda */
+    border-bottom: 1px solid var(--accent-border);
+    padding-bottom: 8px;
+}
+
+.sprint-actions {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.story-item {
+    background-color: #f8fbfd; /* Ligeramente más claro que el panel */
+    border: 1px solid var(--input-border);
+    border-left: 6px solid var(--card-border-left); /* Color de acento para la izquierda */
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.story-item:last-child {
+    margin-bottom: 0;
+}
+
+.story-item h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--button-primary-bg);
+    font-size: 1.15em;
+    text-align: left;
+}
+
+.story-item p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--text-dark);
+}
+
+.story-item .actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.story-item .actions button {
+    padding: 7px 14px;
+    font-size: 0.85em;
+    box-shadow: none; /* Eliminar sombra extra en botones pequeños */
+}
+
+.story-item .actions button.edit-btn {
+    background-color: var(--button-edit);
+    color: var(--text-dark);
+}
+.story-item .actions button.edit-btn:hover {
+    background-color: var(--button-edit-hover);
+}
+
+.story-item .actions button.delete-btn {
+    background-color: var(--button-delete);
+    color: #fff;
+}
+.story-item .actions button.delete-btn:hover {
+    background-color: var(--button-delete-hover);
+}
+
+/* Report Output */
+#reportOutput {
+    background-color: var(--report-bg);
+    border: 1px solid var(--accent-border);
+    border-radius: 8px;
+    padding: 20px;
+    color: var(--text-dark);
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#reportOutput table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#reportOutput th,
+#reportOutput td {
+    border: 1px solid var(--input-border);
+    padding: 12px;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+#reportOutput th {
+    background-color: var(--table-header-bg);
+    color: var(--text-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#reportOutput tr:nth-child(even) {
+    background-color: #f9fbfd; /* Ligeramente diferente para filas pares */
+}
+
+#reportOutput tr:hover {
+    background-color: #e6eff7; /* Hover de filas */
+}
+
+.error-message {
+    color: var(--button-delete);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    background-color: var(--header-footer-bg);
+    color: #fff;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
